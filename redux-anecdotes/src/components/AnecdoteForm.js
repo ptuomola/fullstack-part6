@@ -2,7 +2,7 @@ import React from 'react'
 
 import { createAnecdote } from '../reducers/anecdoteReducer'
 
-const NewAnecdote = (props) => {
+const AnecdoteForm = (props) => {
   const addAnecdote = (event) => {
     event.preventDefault()
     const content = event.target.anecdote.value
@@ -13,11 +13,14 @@ const NewAnecdote = (props) => {
   }
 
   return (
-    <form onSubmit={addAnecdote}>
-      <input name="anecdote" />
-      <button type="submit">add</button>
-    </form>
+    <div>
+      <h2>create new</h2>
+      <form onSubmit={addAnecdote}>
+        <input name="anecdote" />
+        <button type="submit">add</button>
+      </form>
+    </div>
   )
 }
 
-export default NewAnecdote
+export default AnecdoteForm
