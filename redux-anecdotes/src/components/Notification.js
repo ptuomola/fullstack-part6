@@ -9,7 +9,6 @@ const Notification = (props) => {
   }
 
   const notification = props.notification
-  console.log(notification)
 
   if(notification !== '')
   {

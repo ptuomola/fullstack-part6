@@ -1,9 +1,12 @@
 const initialState =  ''
 
-export const setNotification = (notification) => {
-  return {
-    type: 'SET', 
-    data: notification
+export const setNotification = (notification, timeout) => {
+  return async dispatch => {
+    setTimeout(() => dispatch(removeNotification()), timeout * 1000)
+    dispatch({
+      type: 'SET', 
+      data: notification
+    })
   }
 }
 
